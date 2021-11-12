@@ -1,8 +1,26 @@
+<?php
+if(empty(session_id()))
+    session_start();
+
+$login = "superman"; //Log valide.
+
+if($_SERVER["REQUEST_METHOD"] === "POST"){
+    if($_POST['loginname'] === $login)
+        $_SESSION['login'] = $login;
+    
+    header("Location: index.php");
+    exit();
+}
+
+
+?>
+
 <?php require 'inc/head.php'; ?>
 <div class="container" style="margin-top:40px">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
             <div class="panel panel-default">
+
                 <div class="panel-heading">
                     <strong> Sign in to continue</strong>
                 </div>

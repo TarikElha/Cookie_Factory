@@ -2,7 +2,7 @@ body {
     padding-top:70px;
 }
 
-h1, h2, h3, h4,
+h1, h2, h3, h4, caption,
 strong {
   font-family: 'Kaushan Script', cursive;
 }
@@ -52,6 +52,20 @@ section.cookies{
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
+}
+table, th {
+  text-align : center;
+  width: 50vw;
+  margin-left : 25%;
+}
+
+caption {
+  font-size : 5rem;
+  text-align : center;
+}
+
+td, th {
+  border : 2px solid black;
 }
 
 @media screen and ( min-width:768px ){

@@ -1,4 +1,21 @@
 <?php require 'inc/data/products.php'; ?>
+
+<?php
+if(empty(session_id()))
+    session_start();
+if(isset($_GET['add_to_cart'])){    //s'il y a un cookie de sélectionné
+    $cookie_id = $_GET['add_to_cart'];
+    //ajout des infos du produit sélectionné (name et description) à une session "cookies" bidimensionnelle comme catalog.
+    //si l'id est déjà présent, on modifie seulement le champ quantité
+
+     if(isset($_SESSION['cookies'][$cookie_id]))
+        $_SESSION['cookies'][$cookie_id]['quantity']+=1;
+    else
+        $_SESSION['cookies'][$cookie_id] = $catalog[$cookie_id];
+}
+
+?>
+
 <?php require 'inc/head.php'; ?>
 <section class="cookies container-fluid">
     <div class="row">
